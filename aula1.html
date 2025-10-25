@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+
+<html lang="pt-br">
+
+
+<head>
+
+
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Calculadora de IMC</title>
+
+</head>
+
+<body>
+
+<script>
+
+    // 1) Peça ao usuário o peso e a altura usando o comando prompt().
+
+
+    let peso = prompt("Digite seu peso em kg:");
+
+
+    let altura = prompt("Digite sua altura em metros:");
+
+
+    // Verifique se o usuário inseriu valores
+
+
+    if (peso &&altura) {
+
+
+        // 2) Use parseFloat() to convert text values to numbers.
+
+
+        let pesoNum = parseFloat(peso);
+
+
+        let alturaNum = parseFloat(altura);
+
+
+        // Verifique se os valores são números válidos
+
+
+        if (!isNaN(pesoNum) && !isNaN(alturaNum) && alturaNum > 0) {
+
+       // 3) Calcule o IMC com a fórmula: IMC = peso / (altura * altura).
+
+
+            let imc = pesoNum / (alturaNum * alturaNum);
+
+
+// 4) Use uma string template para mostrar o resultado final, formatado com 2 casas decimais.
+
+
+            let imcFormatado = imc.toFixed(2);
+
+
+            alert(`Seu IMC é: ${imcFormatado}`);
+
+
+        } else {
+
+
+            alert("Por favor, insira valores numéricos válidos.");
+
+
+        }
+
+
+    } else {
+
+
+        alert("Operação cancelada.");
+
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
